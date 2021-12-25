@@ -47,7 +47,7 @@ all  destroy  show  update
 (hbnb) help quit
 Quit command to exit the program
 (hbnb) quit
-firdaus@ubuntu:~$
+duplebado@ubuntu:~$
 ```
 ### OBJECTS IMPLEMENTED
 This repository contains the following files:
