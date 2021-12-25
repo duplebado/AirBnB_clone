@@ -5,10 +5,6 @@ This project supports the serialization and deserialization of simple data sets 
 
 This is part 1 of our AirBnb Clone project. The purpose of this project is to make a command interpreter that manages our AirBnb objects.
 
-#### Data Diagram
-
-![data_diagram](assets/data_diagram.jpg)
-
 ### Learning Objectives
 
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
