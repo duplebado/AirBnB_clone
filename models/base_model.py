@@ -57,9 +57,9 @@ class BaseModel:
 
         for key, value in self.__dict__.items():
             if isinstance(value, datetime):
-                res[key] = value.isoformat()
+                result[key] = value.isoformat()
             else:
-                res[key] = value
+                result[key] = value
 
         result['__class__'] = self.__class__.__name__
 
