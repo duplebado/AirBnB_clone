@@ -104,7 +104,7 @@ class TestBaseModel_id_attribute(unittest.TestCase):
 
         modelInstance_1 = BaseModel()
         modelInstance_2 = BaseModel()
-        self.assertNotEqual(modelInstance_2.id, modelInstance_2.id)
+        self.assertNotEqual(modelInstance_1.id, modelInstance_2.id)
 
     def test_type_of_id_is_str(self):
         """
@@ -171,7 +171,7 @@ class TestBaseModel_save_method(unittest.TestCase):
 
         modelInstance = BaseModel()
         modelInstance.save()
-        self.assertNotEqual(modelInstance.created_at, modelInstance.update_at)
+        self.assertNotEqual(modelInstance.created_at, modelInstance.updated_at)
 
     def test_save_method_returns_nothing(self):
         """
