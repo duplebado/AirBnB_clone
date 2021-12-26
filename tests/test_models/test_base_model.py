@@ -89,6 +89,55 @@ class TestBaseModel_initialization(unittest.TestCase):
         modelInstance = BaseModel()
         self.assertEqual(modelInstance.created_at, modelInstance.updated_at)
 
+    def test_when_kwargs_passed_is_empty(self):
+        """
+            checks that id, created_at and updated_at are automatically
+            generated if they're not in kwargs
+        """
+        my_dict = {}
+        modelInstance = BaseModel(**my_dict)
+        self.assertTrue(type(modelInstance.id) is str)
+        self.assertTrue(type(modelInstance.created_at) is datetime)
+        self.assertTrue(type(modelInstance.updated_at) is datetime)
+
+    def test_when_kwargs_passed_is_not_empty(self):
+        """
+            checks that id, created_at and updated_at are created from kwargs
+        """
+        my_dict = {"id": uuid4(), "created_at": datetime.utcnow().isoformat(),
+                   "updated_at": datetime.utcnow().isoformat()}
+        modelInstance = BaseModel(**my_dict)
+        self.assertEqual(modelInstance.id, my_dict["id"])
+        self.assertEqual(modelInstance.created_at,
+                         datetime.strptime(my_dict["created_at"],
+                                           "%Y-%m-%dT%H:%M:%S.%f"))
+        self.assertEqual(modelInstance.updated_at,
+                         datetime.strptime(my_dict["updated_at"],
+                                           "%Y-%m-%dT%H:%M:%S.%f"))
+
+    def test_when_args_and_kwargs_are_passed(self):
+        """
+            checks that when args and kwargs are passed,
+            BaseModel init ignores args
+        """
+        dt = datetime.now()
+        dt_iso = dt.isoformat()
+        modelInstance = BaseModel("1234", id="234", created_at=dt_iso, name="Firdaus")
+        self.assertEqual(modelInstance.id, "234")
+        self.assertEqual(modelInstance.created_at, dt)
+        self.assertEqual(modelInstance.name, "duplebado")
+
+    def test_when_kwargs_passed_is_more_than_default(self):
+        """
+            checks BaseModel does not break when kwargs contains more than
+            the default attributes
+        """
+        my_dict = {"id": uuid4(), "created_at": datetime.utcnow().isoformat(),
+                   "updated_at": datetime.utcnow().isoformat(),
+                   "name": "duplebado"}
+        modelInstance = BaseModel(**my_dict)
+        self.assertTrue(hasattr(modelInstance, "name"))
+
 
 
 
