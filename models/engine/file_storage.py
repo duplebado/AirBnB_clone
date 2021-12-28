@@ -24,7 +24,7 @@ class FileStorage:
                 __objects : dict
                     all __objects
         """
-
+        print("all objects oo =>> ", self.__objects)
         return self.__objects
 
     def new(self, obj):
