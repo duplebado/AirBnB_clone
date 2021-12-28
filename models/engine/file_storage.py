@@ -57,7 +57,7 @@ class FileStorage:
         """
         try:
             with open(self.__file_path, encoding="utf-8") as f:
-                print("load =====> ", json.load(f))
+                ### print("load =====> ", json.load(f))
                 print("loads =====> ", json.loads(json.load(f)))
 
                 for obj in json.loads(json.load(f)).values():
