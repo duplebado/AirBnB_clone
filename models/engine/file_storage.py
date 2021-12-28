@@ -65,4 +65,4 @@ class FileStorage:
                     self.new(json.loads(obj))
         except ValueError:
             print("ValueError ValueError ValueError !!!!!!!!!!!!!!!")
-            pass
+            return
