@@ -58,7 +58,7 @@ class FileStorage:
         try:
             with open(self.__file_path, encoding="utf-8") as f:
                 tule = json.load(f)
-                print("loads =====> ", tule)
+                print("loads =====> ", tule.values())
 
 
                 ###for obj in tule.values():
