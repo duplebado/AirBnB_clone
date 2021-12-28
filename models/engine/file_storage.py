@@ -57,6 +57,9 @@ class FileStorage:
         """
         try:
             with open(self.__file_path, encoding="utf-8") as f:
+                console.log("load =====> ", json.load(f))
+                console.log("loads =====> ", json.loads(json.load(f)))
+
                 for obj in json.loads(json.load(f)).values():
                     print("i====> ", obj)
                     self.new(json.loads(obj))
