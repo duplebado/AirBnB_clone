@@ -57,8 +57,8 @@ class FileStorage:
         """
         try:
             with open(self.__file_path, encoding="utf-8") as f:
-                for obj in json.load(f).values():
-                    print("=====> ", obj)
+                for obj in json.loads(json.load(f)).values():
+                    print("i====> ", obj)
                     self.new(json.loads(obj))
         except:
             pass
