@@ -60,9 +60,9 @@ class FileStorage:
                 tule = json.load(f)
                 print("loads =====> ", tule)
 
-                for obj in json.loads(json.load(f)).values():
-                    print("i====> ", obj)
-                    self.new(json.loads(obj))
-        except ValueError:
-            print("ValueError ValueError ValueError !!!!!!!!!!!!!!!")
-            return
+
+                ###for obj in tule.values():
+                   ### print("i====> ", obj)
+                    ###self.new(json.loads(obj))
+        except:
+            pass
