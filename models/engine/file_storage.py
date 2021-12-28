@@ -49,7 +49,6 @@ class FileStorage:
             for k, v in self.__objects.items():
                 dict_store[k] = v.to_dict()
             json.dump(dict_store, f)
-            print("json.dump", json.dumps(dict_store))
 
     def reload(self):
         """
@@ -59,7 +58,8 @@ class FileStorage:
         try:
             with open(self.__file_path, encoding="utf-8") as f:
                 for obj in json.load(f).values():
-                    print("obj", obj)
+                    print("the obj", obj)
+                    print("the values ", json.load.values())
                     self.new(obj)
         except:
             pass
