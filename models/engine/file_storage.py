@@ -63,5 +63,6 @@ class FileStorage:
                 for obj in json.loads(json.load(f)).values():
                     print("i====> ", obj)
                     self.new(json.loads(obj))
-        except:
+        except ValueError:
+            print("ValueError ValueError ValueError !!!!!!!!!!!!!!!")
             pass
