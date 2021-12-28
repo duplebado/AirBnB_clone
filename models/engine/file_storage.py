@@ -24,7 +24,7 @@ class FileStorage:
                 __objects : dict
                     all __objects
         """
-        print("all objects oo =>> ", self.__objects)
+        
         return self.__objects
 
     def new(self, obj):
@@ -49,6 +49,7 @@ class FileStorage:
             for k, v in self.__objects.items():
                 dict_store[k] = v.to_dict()
             json.dump(dict_store, f)
+            print("json.dump", json.dump(dict_store))
 
     def reload(self):
         """
