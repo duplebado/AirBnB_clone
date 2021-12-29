@@ -59,6 +59,7 @@ class FileStorage:
             with open(self.__file_path, encoding="utf-8") as f:
                 stored_dict = json.load(f)
                 print("length of stored_dict", len(stored_dict))
+                print("stored_dict ", stored_dict)
                 for obj in stored_dict.values():
                     self.new(json.loads(obj))
                 print("length of objs", len(self.__objects))
