@@ -61,7 +61,9 @@ class FileStorage:
                 for x in stored_dict:
                     print("x is ", x)
                     ### self.new(stored_dict[x])
-                    self.new({})
+                    self.new({id: "sakamanje"})
+
+                print("all :", self.all())
                 for obj in stored_dict.values():
                     self.new(obj)
                 print("length of objs", len(self.__objects))
