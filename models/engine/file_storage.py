@@ -62,7 +62,7 @@ class FileStorage:
                     self.new(stored_dict[x])
 
                 
-                for obj in stored_dict.values():
-                    self.new(obj)
+                ##for obj in stored_dict.values():
+                  ##  self.new(obj)
         except FileNotFoundError:
             return
