@@ -58,14 +58,14 @@ class FileStorage:
         try:
             with open(self.__file_path, encoding="utf-8") as f:
                 stored_dict = json.load(f)
-                for x in stored_dict:
+                ###for x in stored_dict:
                     ### self.new(stored_dict[x])
-                    self.new({id: "sakamanje"})
+                   ### self.new({id: "sakamanje"})
 
-                print("all :", self.all())
-                for obj in stored_dict.values():
-                    self.new(obj)
-                print("length of objs", len(self.__objects))
+                ###print("all :", self.all())
+                ##for obj in stored_dict.values():
+                  ##  self.new(obj)
+                ##print("length of objs", len(self.__objects))
         except Exception as e:
             print ('type is:', e.__class__.__name__)
             print("An exception occured")
