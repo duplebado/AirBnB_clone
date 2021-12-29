@@ -62,7 +62,7 @@ class FileStorage:
                 print("json loads ", json.loads(stored_dict["BaseModel.ffe15971-d0eb-401b-bbb4-e9cd08589265"]))
                 print("stored_dict ", type(stored_dict["BaseModel.ffe15971-d0eb-401b-bbb4-e9cd08589265"]))
                 for obj in stored_dict.values():
-                    self.new(json.loads(obj))
+                    self.new(obj)
                 print("length of objs", len(self.__objects))
         except:
             pass
