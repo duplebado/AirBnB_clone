@@ -36,7 +36,7 @@ class FileStorage:
             ----------
                 obj
         """
-        print("typeof ", type(obj))
+        ### print("typeof ", type(obj))
         self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
