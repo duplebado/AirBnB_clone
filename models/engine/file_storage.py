@@ -67,4 +67,4 @@ class FileStorage:
                     self.new(obj)
                 print("length of objs", len(self.__objects))
         except:
-            pass
+            print("An exception occured")
