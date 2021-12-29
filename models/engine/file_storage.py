@@ -66,6 +66,6 @@ class FileStorage:
                 ##for obj in stored_dict.values():
                   ##  self.new(obj)
                 ##print("length of objs", len(self.__objects))
-        except Exception as e:
-            print ('type is:', e.__class__.__name__)
+        except FileNotFoundError:
             print("An exception occured")
+            return
