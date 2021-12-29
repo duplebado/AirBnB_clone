@@ -60,7 +60,8 @@ class FileStorage:
                 stored_dict = json.load(f)
                 for x in stored_dict:
                     print("x is ", x)
-                    self.new(stored_dict[x])
+                    ### self.new(stored_dict[x])
+                    self.new({})
                 for obj in stored_dict.values():
                     self.new(obj)
                 print("length of objs", len(self.__objects))
