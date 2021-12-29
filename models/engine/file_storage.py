@@ -24,7 +24,7 @@ class FileStorage:
                 __objects : dict
                     all __objects
         """
-        
+        print("AFTER RELOAD!!!!!!!!!!!!!!!!!!!!!!")
         return self.__objects
 
     def new(self, obj):
