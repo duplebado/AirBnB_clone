@@ -59,7 +59,6 @@ class FileStorage:
             with open(self.__file_path, encoding="utf-8") as f:
                 stored_dict = json.load(f)
                 for x in stored_dict:
-                    print("x is ", x)
                     ### self.new(stored_dict[x])
                     self.new({id: "sakamanje"})
 
