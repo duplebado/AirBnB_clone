@@ -57,11 +57,8 @@ class FileStorage:
         """
         try:
             with open(self.__file_path, encoding="utf-8") as f:
-                tule = json.load(f)
-                i = 0
-                for obj in tule.values():
-                   print("value ====> ", obj)
-                   print("iteration number is ", i)
-                    ###self.new(json.loads(obj))
+                stored_dict = json.load(f)
+                for obj in stored_dict.values():
+                    self.new(json.loads(obj))
         except:
             pass
