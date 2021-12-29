@@ -36,7 +36,7 @@ class FileStorage:
             ----------
                 obj
         """
-
+        print("typeof ", type(obj))
         self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
@@ -60,6 +60,7 @@ class FileStorage:
                 stored_dict = json.load(f)
                 for x in stored_dict:
                     print("x is ", x)
+                    self.new(stored_dict[x])
                 for obj in stored_dict.values():
                     self.new(obj)
                 print("length of objs", len(self.__objects))
