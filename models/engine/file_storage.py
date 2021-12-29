@@ -36,7 +36,7 @@ class FileStorage:
             ----------
                 obj
         """
-
+        print("obj", obj)
         self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
@@ -64,6 +64,5 @@ class FileStorage:
                 
                 for obj in stored_dict.values():
                     self.new(obj)
-                print("length of objs", len(self.__objects))
         except FileNotFoundError:
             return
