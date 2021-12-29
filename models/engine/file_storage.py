@@ -60,5 +60,7 @@ class FileStorage:
                 stored_dict = json.load(f)
                 for obj in stored_dict.values():
                     self.new(json.loads(obj))
+
+            print("length of objs", len(self.__objects)
         except:
             pass
