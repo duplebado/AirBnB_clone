@@ -12,7 +12,7 @@ class FileStorage:
         JSON file to instances
     """
 
-    __file_path = "file.json"
+    __file_path = "myfile.json"
     __objects = {}
 
     def all(self):
