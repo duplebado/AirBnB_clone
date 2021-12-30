@@ -5,6 +5,7 @@
 
 import json
 
+from models.base_model import BaseModel
 
 class FileStorage:
     """
@@ -27,7 +28,7 @@ class FileStorage:
 
         return self.__objects
 
-    def new(self, obj):
+    def new(self, obj, src=False):
         """
             sets in __objects the property with key <obj class name>.id
             and value 'obj'
@@ -36,7 +37,6 @@ class FileStorage:
             ----------
                 obj
         """
-
         self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
@@ -55,14 +55,11 @@ class FileStorage:
             deserializes the JSON file to __objects
             only IF it exists
         """
+
         try:
             with open(self.__file_path, encoding="utf-8") as f:
                 stored_dict = json.load(f)
                 for x in stored_dict:
-                    self.new(stored_dict[x])
-
-                
-                ##for obj in stored_dict.values():
-                  ##  self.new(obj)
+                    self.new(eval(stored_dict["__class__"])(**stored_dict))
         except FileNotFoundError:
             return
