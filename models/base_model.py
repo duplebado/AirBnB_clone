@@ -19,6 +19,9 @@ class BaseModel:
                 height : int
                     height of the rectangle
         """
+        
+        from models import storage
+
         if not kwargs:
             self.id = str(uuid4())
             self.created_at = self.updated_at = datetime.now()
