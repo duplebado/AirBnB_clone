@@ -13,11 +13,11 @@ class TestFileStorageInit(unittest.TestCase):
 
     def test_file_path_is_a_private_class_attr(self):
         """Checks that file_path is a private class attribute"""
-        self.assertFalse(hasattr(FileStorage(), "__file_path"))
+        self.assertTrue(hasattr(FileStorage(), "__file_path"))
 
     def test_objects_is_a_private_class_attr(self):
         """Checks that objects is a private class attribute"""
-        self.assertFalse(hasattr(FileStorage(), "__objects"))
+        self.assertTrue(hasattr(FileStorage(), "__objects"))
 
     def test_init_without_arg(self):
         """Tests initialization without args"""
