@@ -59,8 +59,8 @@ class FileStorage:
         try:
             with open(self.__file_path, encoding="utf-8") as f:
                 stored_dict = json.load(f)
-                for obj in stored_dict:
-                    print("obj ", obj)
-                    ##self.new(eval(obj["__class__"])(**obj))
+                for key in stored_dict:
+                    value = stored_dict[key]
+                    self.new(eval(value["__class__"])(**value))
         except FileNotFoundError:
             return
