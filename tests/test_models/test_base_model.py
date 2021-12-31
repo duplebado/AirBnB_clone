@@ -268,3 +268,7 @@ class TestBaseModel_to_dict_method(unittest.TestCase):
 
         modelInstance = BaseModel()
         self.assertEqual(modelInstance.to_dict()["updated_at"], modelInstance.updated_at.isoformat())
+
+
+if __name__ == "__main__":
+    unittest.main()
