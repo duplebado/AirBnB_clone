@@ -153,7 +153,7 @@ class HBNBCommand(cmd.Cmd):
         """
         args = check_args(argv)
 
-        if args is None:
+        if args is None or len(args) < 2:
             return
 
         if len(args) == 2:
