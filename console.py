@@ -156,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         if args is None:
             return
 
-        if len(args) == 2:
+        if len(args) <= 2:
             print("** attribute name missing **")
         elif args[2] == "id" or args[2] == "created_at" or args[2] == "updated_at":
             pass
