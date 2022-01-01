@@ -37,6 +37,7 @@ class FileStorage:
             ----------
                 obj
         """
+
         self.__objects["{}.{}".format(obj.__class__.__name__, obj.id)] = obj
 
     def save(self):
@@ -61,6 +62,7 @@ class FileStorage:
                 stored_dict = json.load(f)
                 for key in stored_dict:
                     value = stored_dict[key]
+
                     self.new(eval(value["__class__"])(**value))
         except FileNotFoundError:
             return
