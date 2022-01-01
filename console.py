@@ -78,6 +78,9 @@ class HBNBCommand(cmd.Cmd):
 
         args = check_args(argv)
 
+        if args is None:
+            return
+
         if args:
             newObj = eval(args[0])()
             newObj.save()
@@ -90,6 +93,9 @@ class HBNBCommand(cmd.Cmd):
         """
 
         args = check_args(argv)
+
+        if args is None:
+            return
 
         if args:
             if len(args) != 2:
@@ -107,6 +113,9 @@ class HBNBCommand(cmd.Cmd):
         """
 
         args = check_args(argv)
+
+        if args is None:
+            return
 
         if args:
             if len(args) != 2:
@@ -127,6 +136,9 @@ class HBNBCommand(cmd.Cmd):
 
         arg_list = argv.split()
 
+        if arg_list is None:
+            return
+
         if len(arg_list) == 0:
             print([obj.__str__() for obj in storage.all().values()])
         elif arg_list[0] in CLASSES:
@@ -140,6 +152,9 @@ class HBNBCommand(cmd.Cmd):
             adding or updating attribute
         """
         args = check_args(argv)
+
+        if args is None:
+            return
 
         if len(args) == 2:
             print("** attribute name missing **")
