@@ -34,9 +34,9 @@ def check_args(args):
     arg_list = args.split()
 
     if len(arg_list) == 0:
-        print("** class name missing **")
+        return print("** class name missing **")
     elif arg_list[0] not in CLASSES:
-        print("** class doesn't exist **")
+        retun print("** class doesn't exist **")
     else:
         return arg_list
 
@@ -156,7 +156,7 @@ class HBNBCommand(cmd.Cmd):
         if args is None:
             return
 
-        if len(args) <= 2:
+        if len(args) == 2:
             print("** attribute name missing **")
         elif args[2] == "id" or args[2] == "created_at" or args[2] == "updated_at":
             pass
