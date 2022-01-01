@@ -149,15 +149,19 @@ class HBNBCommand(cmd.Cmd):
             print("** value missing **")
         else:
             key = "{}.{}".format(args[0], args[1])
-            obj = storage.all()[key]
-            
-            if args[2] in type(obj).__dict__:
-                v_type = type(obj.__class__.__dict__[args[2]])
-                setattr(obj, args[2], v_type(args[3]))
-            else:
-                setattr(obj, args[2], args[3])
+            try:
+                obj = storage.all()[key]
 
-            obj.save()
+                if args[2] in type(obj).__dict__:
+                    v_type = type(obj.__class__.__dict__[args[2]])
+                    setattr(obj, args[2], v_type(args[3]))
+                else:
+                    setattr(obj, args[2], args[3])
+
+                obj.save()
+            except KeyError:
+                print("** no instance found **")
+
 
 
 if __name__ == "__main__":
