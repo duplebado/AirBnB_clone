@@ -34,9 +34,9 @@ def check_args(args):
     arg_list = args.split()
 
     if len(arg_list) == 0:
-        return print("** class name missing **")
+        print("** class name missing **")
     elif arg_list[0] not in CLASSES:
-        return print("** class doesn't exist **")
+        print("** class doesn't exist **")
     else:
         return arg_list
 
@@ -114,9 +114,6 @@ class HBNBCommand(cmd.Cmd):
 
         args = check_args(argv)
 
-        if args is None:
-            return
-
         if args:
             if len(args) != 2:
                 print("** instance id missing **")
@@ -153,30 +150,29 @@ class HBNBCommand(cmd.Cmd):
         """
         args = check_args(argv)
 
-        if args is None or len(args) < 2:
-            return
+        if args:
+            if len(args) == 1:
+                print("** instance id missing **")
+            elif len(args) == 2:
+                print("** attribute name missing **")
+            elif args[2] == "id" or args[2] == "created_at" or args[2] == "updated_at":
+                pass
+            elif len(args) == 3:
+                print("** value missing **")
+            else:
+                key = "{}.{}".format(args[0], args[1])
+                try:
+                    obj = storage.all()[key]
 
-        if len(args) == 2:
-            print("** attribute name missing **")
-        elif args[2] == "id" or args[2] == "created_at" or args[2] == "updated_at":
-            pass
-        elif len(args) == 3:
-            print("** value missing **")
-        else:
-            key = "{}.{}".format(args[0], args[1])
-            try:
-                obj = storage.all()[key]
+                    if args[2] in type(obj).__dict__:
+                        v_type = type(obj.__class__.__dict__[args[2]])
+                        setattr(obj, args[2], v_type(args[3]))
+                    else:
+                        setattr(obj, args[2], args[3])
 
-                if args[2] in type(obj).__dict__:
-                    v_type = type(obj.__class__.__dict__[args[2]])
-                    setattr(obj, args[2], v_type(args[3]))
-                else:
-                    setattr(obj, args[2], args[3])
-
-                obj.save()
-            except KeyError:
-                print("** no instance found **")
-
+                    obj.save()
+                except KeyError:
+                    print("** no instance found **")
 
 
 if __name__ == "__main__":
