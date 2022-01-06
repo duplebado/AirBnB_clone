@@ -13,5 +13,6 @@ header {
 	width: 142px;
 	margin: auto auto auto 20px;
 	background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
 	background-size: auto;
 }
