@@ -20,7 +20,7 @@ header {
 	margin-top: 5px;
 	height: 60px;
 	width: 142px;
-	background-image: url("../images/logo.png");
+	background-image: url("https://raw.githubusercontent.com/duplebado/AirBnB_clone/main/web_static/images/logo.png");
 	background-repeat: no-repeat;
 	background-size: 142px 60px;
 }
