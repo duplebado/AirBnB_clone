@@ -8,18 +8,10 @@ header {
 }
 
 .logo {
-	display: inline-block;
 	height: 60px;
 	width: 142px;
 	margin: auto auto auto 20px;
 	background-image: url("./images/logo.png");
 	background-repeat: no-repeat;
 	background-size: auto;
-	display: inline-block;
-	margin-left: 20px;
-	margin-top: 5px;
-	height: 60px;
-	width: 142px;
-	background-repeat: no-repeat;
-	background-size: 142px 60px;
 }
